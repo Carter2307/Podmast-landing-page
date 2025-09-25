@@ -1,0 +1,18 @@
+@use "../utils/functions" as *;
+
+@mixin space($size) {
+  display: grid;
+  gap: rem($size);
+}
+
+@mixin space-x($size) {
+  > * + * {
+    margin-left: rem($size);
+  }
+}
+
+@mixin space-y($size) {
+  > * + * {
+    margin-top: rem($size);
+  }
+}

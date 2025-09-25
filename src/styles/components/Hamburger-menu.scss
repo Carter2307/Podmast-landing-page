@@ -1,0 +1,40 @@
+@use '../utils/functions' as *;
+@use '../layout/spacing' as *;
+
+
+.hamburger-menu  {
+  all: unset;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: rem(5);
+  display: flex;
+  flex-direction: column;
+
+  span:not(:last-child) {
+    margin-bottom: rem(5);
+  }
+
+  span {
+    display: inline-block;
+    width: rem(20);
+    height: rem(1.5);
+    border-radius: rem(2);
+    background-color: var(--color-gray-950);
+    transition: all .3s ease-out;
+  }
+
+  &[data-opened="true"] span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  &[data-opened="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  &[data-opened="true"] span:nth-child(3) {
+    transform: rotate(-45deg) translate(4px, -5px);
+  }
+
+
+}

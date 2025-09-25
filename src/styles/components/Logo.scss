@@ -1,0 +1,27 @@
+@use "../layout/flex" as *;
+@use "../utils/functions" as *;
+@use "../layout/spacing" as *;
+@use "../base/fontSize" as font;
+
+.logo {
+  @include inline-flex-center;
+  @include  space-x(10);
+  transition: transform .3s ease-out;
+
+  &:active {
+    transform: scale(.97);
+  }
+
+  span {
+    font-weight: 600;
+    @include font.text-base;
+  }
+}
+
+.logo__placeholder {
+  display: inline-block;
+  height: rem(32);
+  width: rem(32);
+  border-radius: rem(8);
+  background-color: var(--color-gray-200);
+}

@@ -1,0 +1,55 @@
+@use 'sass:map';
+
+$breakpoint-list: (
+  'sm': 640,
+  'md': 768,
+  'lg': 1024,
+  'xlg': 1280,
+  '2xlg': 1536,
+);
+
+
+@mixin screen-min($value) {
+  $size: map.get($breakpoint-list, $value);
+
+  @if $size {
+    @media (min-width: #{$size}px) {
+      @content;
+    }
+  } @else {
+    @media (min-width: #{$value}px) {
+      @content;
+    }
+  }
+}
+
+@mixin screen-max($value) {
+  $size: map.get($breakpoint-list, $value);
+
+  @if $size {
+    @media (max-width: #{$size}px) {
+      @content;
+    }
+  } @else {
+    @media (max-width: #{$value}px) {
+      @content;
+    }
+  }
+}
+
+@mixin desktop-only($size) {
+  display: none !important;
+  @include breakpoints($size) {
+    display: inherit !important;
+  }
+}
+
+@mixin v-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+@mixin v-visible {
+  visibility: visible;
+  opacity: 1;
+}

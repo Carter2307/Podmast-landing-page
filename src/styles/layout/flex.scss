@@ -1,0 +1,54 @@
+@use "../utils/functions" as *;
+
+//flex
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin inline-flex-center {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-around {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+// flex col
+@mixin collumns($gap) {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  row-gap: rem($gap);
+}
+
+@mixin flex-col-gap($size) {
+  display: flex;
+  flex-direction: column;
+  gap: rem($size);
+}
+
+// flex row
+@mixin rows($gap) {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  column-gap: rem($gap);
+}
+
+@mixin flex-row-gap($size) {
+  display: flex;
+  gap: rem($size);
+}
+

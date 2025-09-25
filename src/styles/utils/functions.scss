@@ -1,0 +1,8 @@
+@use "../base/variables" as *;
+
+@function rem($value) {
+  $result: calc(($value * 1px) / $base-font);
+  @return $result * 1rem;
+}
+
+

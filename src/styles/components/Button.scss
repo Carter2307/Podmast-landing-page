@@ -1,0 +1,37 @@
+@use "../layout/flex" as *;
+@use "../utils/functions" as *;
+
+.btn {
+  all: unset;
+  @include flex-center;
+  background: none;
+  cursor: pointer;
+  margin: 0;
+  border-radius: 9999px;
+  height: rem(40);
+  padding: 0 rem(24);
+  transition: scale .3s ease-out;
+  border: 1px solid transparent;
+  font-weight: 600;
+
+  &:active {
+    transform: scale(.97);
+  }
+}
+
+.btn-primary {
+  background-color: var(--accent-gable-green);
+  color: var(--white);
+}
+
+.btn-secondary {
+  background-color: var(--white);
+  color: var(--accent-gable-green);
+  border-color: var(--color-gray-200);
+
+}
+
+.btn-tertiary {
+  background-color: var(--accent-yellow-green);
+  color: var(--accent-baltic-sea);
+}

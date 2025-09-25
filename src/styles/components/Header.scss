@@ -1,0 +1,24 @@
+@use "../layout/container" as *;
+@use "../layout/flex" as *;
+@use "../utils/functions" as *;
+
+:root {
+  --header-height: 64px;
+  --containter: 1110px;
+}
+
+.header {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include container;
+
+  &__cta {
+    @include flex-center;
+
+    button:last-child {
+      margin-left: rem(12);
+    }
+  }
+}
