@@ -1,11 +1,11 @@
 const SLOGANG =
-  'Our solutions make production faster and cheaper, Contact us for more information'
+  'Our solutions make production faster and cheaper, Contact us for more information';
 
-const currentYear = new Date().getUTCFullYear()
+const currentYear = new Date().getUTCFullYear();
 
 export interface NavLinkItem {
-  label: string
-  url: string
+  label: string;
+  url: string;
 }
 
 const NAV_LINKS: NavLinkItem[] = [
@@ -25,7 +25,7 @@ const NAV_LINKS: NavLinkItem[] = [
     label: 'Contact',
     url: '#',
   },
-]
+];
 
 const FOOTER_LINKS = {
   description: SLOGANG,
@@ -66,21 +66,26 @@ const FOOTER_LINKS = {
         { label: 'Supply Chain Planning', link: '#' },
       ],
     },
-    {
-      title: 'Get in Touch',
-      type: 'social',
-      links: [
-        { label: 'info@prodmast.com', link: 'mailto:info@prodmast.com' },
-        {
-          label: 'LinkedIn',
-          link: '#',
-        },
-        { label: 'Twitter', link: '#' },
-        { label: 'YouTube', link: '#' },
-        { label: 'Facebook', link: '#' },
-      ],
-    },
   ],
+  contact: {
+    title: 'Get in Touch',
+    type: 'social',
+    links: [
+      {
+        label: 'info@prodmast.com',
+        link: 'mailto:info@prodmast.com',
+        type: 'link',
+      },
+      {
+        label: 'LinkedIn',
+        link: '#',
+        type: 'icon',
+        icon: 'linkedin',
+      },
+      { label: 'Instagram', link: '#', type: 'icon', icon: 'instagram' },
+      { label: 'Facebook', link: '#', type: 'icon', icon: 'facebook' },
+    ],
+  },
   legal: [
     {
       label: 'Terms & Conditions',
@@ -92,6 +97,6 @@ const FOOTER_LINKS = {
     },
   ],
   mention: `© ${currentYear}. All rights reserved`,
-}
+};
 
-export { NAV_LINKS, FOOTER_LINKS }
+export { NAV_LINKS, FOOTER_LINKS };

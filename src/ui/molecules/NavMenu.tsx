@@ -1,14 +1,14 @@
-import type { NavLinkItem } from '../../data/links.ts'
-import { NavLink } from '../atoms/NavLink.tsx'
-import * as React from 'react'
+import type { NavLinkItem } from '../../data/links.ts';
+import { NavLink } from '../atoms/NavLink.tsx';
+import * as React from 'react';
 
 interface NavMenuProps extends React.ComponentProps<'nav'> {
-  links: NavLinkItem[]
-  open?: boolean
+  links: NavLinkItem[];
+  open?: boolean;
 }
 
 const NavMenu = (props: NavMenuProps) => {
-  const { links, open = false, ...rest } = props
+  const { links, open = false, ...rest } = props;
 
   return (
     <nav className={'nav'} data-nav-opened={open} {...rest}>
@@ -16,13 +16,15 @@ const NavMenu = (props: NavMenuProps) => {
         {links.map((link) => {
           return (
             <li className={'nav__list__item'} key={link.label}>
-              <NavLink href={link.url}>{link.label}</NavLink>
+              <NavLink href={link.url} className={'nav__link'}>
+                {link.label}
+              </NavLink>
             </li>
-          )
+          );
         })}
       </ul>
     </nav>
-  )
-}
+  );
+};
 
-export { NavMenu }
+export { NavMenu };

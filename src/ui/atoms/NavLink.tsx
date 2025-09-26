@@ -1,15 +1,17 @@
-import * as React from 'react'
+import * as React from 'react';
+import classNames from 'classnames';
 
-type NavLinkProps = React.ComponentProps<'a'> & {}
+type NavLinkProps = React.ComponentProps<'a'> & {};
 
 const NavLink = (props: NavLinkProps) => {
-  const { children, ...rest } = props
+  const { children, className, ...rest } = props;
+
   return (
-    <a className={'nav__link'} {...rest}>
+    <a className={classNames('link', className)} {...rest}>
       {children}
     </a>
-  )
-}
+  );
+};
 
-export { NavLink }
-export type { NavLinkProps }
+export { NavLink };
+export type { NavLinkProps };

@@ -1,6 +1,10 @@
 @use "../utils/functions" as *;
 @use "../base/responsive" as *;
 
+:root {
+  --container: 1140px;
+}
+
 // Auto width with container
 @mixin mx-auto {
   margin-right: auto;

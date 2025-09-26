@@ -17,11 +17,17 @@ body {
   font-family: var(--font-primary), serif;
   position: relative;
   font-size: var(--text-base);
+  letter-spacing: .1px;
 }
 
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+.divider {
+  height: 0px;
+  border: .5px solid rgba(#ffff, .2);
 }
 
 //debugging

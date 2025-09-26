@@ -16,7 +16,7 @@
   height: calc(100vh - var(--header-height));
   width: 100vw;
   backdrop-filter: blur(30px);
-  background-color: rgba(255, 255, 255, .5);
+  background-color: rgba(255, 255, 255, .9);
   display: flex;
   align-items: start;
   justify-content: start;
@@ -38,6 +38,7 @@
 
   &[data-nav-opened="true"] {
     transform: translateY(0px);
+    z-index: 10;
     visibility: visible;
     opacity: 1;
     transition: all .6s cubic-bezier(0.22, 1, 0.36, 1);
@@ -65,6 +66,7 @@
 
   @include screen-min('lg') {
     width: auto;
+    @include text-sm;
   }
 }
 
@@ -72,13 +74,15 @@
   display: flex;
   width: 100%;
   padding: rem(24) rem(32);
-  border: 1px solid var(--color-gray-100);
+
+  border-bottom: 1px solid var(--color-gray-300);
   font-weight: 500;
   transition: opacity .3s ease-out;
 
   &:hover {
     opacity: .6;
   }
+
   @include screen-min("lg") {
     width: auto;
     padding: 0;

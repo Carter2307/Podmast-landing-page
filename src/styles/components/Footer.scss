@@ -1,0 +1,132 @@
+@use '../layout/container' as *;
+@use '../utils/functions' as *;
+@use '../layout/flex' as *;
+@use '../layout/spacing' as *;
+@use '../base/responsive' as *;
+@use '../base/fontSize' as *;
+
+$footer-y-padding: rem(64);
+
+.footer {
+  background-color: var(--dark);
+  padding-top: $footer-y-padding;
+  color: var(--white);
+}
+
+.footer__container {
+  @include container;
+  @include space-y(32);
+
+  @include screen-min('md') {
+    @include space-y(64)
+  }
+}
+
+.footer__top {
+  display: flex;
+  flex-direction: column;
+  gap: rem(24);
+
+  @include mx-auto;
+  max-width: rem(640);
+
+  @include screen-min('lg') {
+    flex-direction: row;
+    max-width: 100%;
+    margin: 0;
+    justify-content: space-between;
+  }
+}
+
+.footer__brand {
+  @include flex-col-gap(16);
+  align-items: flex-start;
+
+  p {
+    max-width: rem(240);
+    @include text-sm;
+    opacity: .8;
+  }
+}
+
+.footer__nav {
+  display: grid;
+  gap: rem(32);
+  grid-template-columns: repeat(2, 1fr);
+
+  @include screen-min('lg') {
+    grid-template-columns: repeat(4, auto);
+    gap: rem(64);
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    gap: rem(12);
+
+    &:last-child {
+      li:last-child {
+        opacity: 1;
+        display: inline-flex;
+        @include space-x(8);
+      }
+
+      .link {
+        opacity: .8;
+        transition: all .3s ease-out;
+
+        &:hover {
+          opacity: 1;
+          transform: scale(1.1);
+        }
+      }
+    }
+
+
+    h4 {
+      font-weight: 700;
+      @include text-base;
+    }
+
+    ul {
+      @include flex-col-gap(12);
+
+      li {
+        opacity: .8;
+        transition: opacity .3s ease-out;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.footer__bottom {
+  display: flex;
+  flex-direction: column;
+  gap: rem(12);
+
+  padding-bottom: $footer-y-padding;
+
+  @include screen-min('sm') {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+;
+
+  ul {
+    display: inline-flex;
+    gap: rem(16);
+
+    li {
+      opacity: .8;
+      transition: opacity .3s ease-out;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
