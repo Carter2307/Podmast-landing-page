@@ -1,0 +1,32 @@
+@use '../utils/functions' as *;
+@use '../base/fontSize' as *;
+@use '../base/responsive' as *;
+@use '../layout/flex' as *;
+@use '../layout/spacing' as *;
+
+.cta {
+  padding: rem(64) rem(24);
+  background-color: var(--accent-gable-green);
+  color: var(--white);
+
+  @include flex-center;
+  flex-direction: column;
+  @include space-y(18);
+
+  @include screen-min(lg) {
+    padding-top: rem(76);
+  }
+
+  p {
+    @include text-sm;
+    max-width: rem(380);
+    text-align: center;
+    opacity: .65;
+
+    @include screen-min(lg) {
+      @include text-base;
+      max-width: rem(420);
+    }
+  }
+}
+

@@ -117,4 +117,14 @@ const PRICES = {
   ],
 };
 
-export { SERVICES, BENEFITS, PRICES };
+const CTA = {
+  title: 'From idea to Production in Days',
+  description:
+    'Accelerate your production with our technology, Reduce downtime and optimize costs. Get a special offer now!',
+  cta: {
+    label: 'Work With Us',
+    link: '',
+  },
+};
+
+export { SERVICES, BENEFITS, PRICES, CTA };

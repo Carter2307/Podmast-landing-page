@@ -1,4 +1,6 @@
 @use '../layout/flex' as *;
+@use '../base/fontSize' as *;
+@use '../base/responsive' as *;
 
 .cover {
   width: 100%;
@@ -21,4 +23,17 @@
 
 .flex-center {
   @include flex-center;
+}
+
+.title-2 {
+  @include text-lg;
+  font-weight: 700;
+
+  @include screen-min(md) {
+    @include text-2xl;
+  }
+
+  @include screen-min(lg) {
+    @include text-4xl;
+  }
 }
