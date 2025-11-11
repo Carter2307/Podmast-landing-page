@@ -45,7 +45,11 @@ const Footer = () => {
                 <li className={'footer__nav__item'}>
                   {socialItems.map((socialIcon) => {
                     const icon = getIcon(socialIcon.icon as string);
-                    return <NavLink href={socialIcon.link}>{icon}</NavLink>;
+                    return (
+                      <NavLink href={socialIcon.link} key={socialIcon.label}>
+                        {icon}
+                      </NavLink>
+                    );
                   })}
                 </li>
               </ul>
@@ -60,7 +64,7 @@ const Footer = () => {
           <ul>
             {legal.map((link) => {
               return (
-                <li>
+                <li key={link.label}>
                   <NavLink href={link.link}>{link.label}</NavLink>
                 </li>
               );

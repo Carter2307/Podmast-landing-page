@@ -71,6 +71,15 @@ const BENEFITS = {
   ],
 };
 
+export type PricePlan = {
+  label: string;
+  description: string;
+  amount: number;
+  unit: string;
+  features: string[];
+};
+
+
 const PRICES = {
   title: 'Tailored Plans for Your\nManufacturing Scale',
   description: 'Flexible pricing for any business size',

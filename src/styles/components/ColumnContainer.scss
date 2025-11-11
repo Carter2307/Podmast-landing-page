@@ -1,0 +1,31 @@
+@use "../layout/flex" as *;
+@use "../utils/functions" as *;
+@use "../layout/container.scss" as *;
+@use "../base/responsive.scss" as *;
+
+
+.col-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+    @include container;
+    padding-top: var(--py);
+    padding-bottom: var(--py);
+    
+    @include screen-min(lg) {
+        flex-direction: row;
+    }
+    
+    &-wrapper {
+        width: 100%;
+        border-radius: 16px;
+        /* background-color: red; */
+        display: flex;
+        align-items: center;
+    }
+    
+    &-wrapper:nth-child(1) {
+        /* background-color: greenyellow; */
+    }
+}

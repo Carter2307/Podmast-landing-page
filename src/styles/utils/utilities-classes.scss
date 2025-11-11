@@ -34,6 +34,21 @@
   }
 
   @include screen-min(lg) {
+    @include text-3xl;
+  }
+  
+  @include screen-min(xlg) {
     @include text-4xl;
   }
+}
+
+
+.text-body {
+    @include text-sm;
+    color: var(--color-gray-700)
+}
+
+.my-5 {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
